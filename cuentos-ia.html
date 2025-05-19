@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Generador de Cuentos Infantiles</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/ia.css">
+</head>
+<body>
+
+  <h1>📖 ¡Crea tu cuento mágico!</h1>
+
+  <form id="form-cuento">
+    <input type="text" id="nombre" placeholder="Tu nombre" required />
+    <input type="text" id="personaje" placeholder="Nombre de un personaje (ej. un dragón, tu mascota, etc.)" required />
+    <input type="text" id="lugar" placeholder="Un lugar mágico o divertido" required />
+    
+    <select id="tipo-aventura" required>
+      <option value="">Elige el tipo de aventura</option>
+      <option value="fantasia">🧚 Fantasía</option>
+      <option value="espacial">🚀 Espacial</option>
+      <option value="animales">🐾 Con animales</option>
+      <option value="comico">😂 Cómico</option>
+      <option value="misterio">🕵️ Misterio</option>
+    </select>
+
+    <textarea id="mensaje" placeholder="¿Quieres dejar un mensaje mágico? (opcional)" rows="3"></textarea>
+    
+    <button type="submit">✨ ¡Generar cuento!</button>
+  </form>
+
+  <div class="generar-cuento" id="resultadoCuento" style="white-space: pre-wrap; margin-top: 20px;"></div>
+
+  <a href="index.html" class="btn-volver">⬅️ Volver al inicio</a>  
+  <div class="botones-opciones" style="display: none;"></div>
+
+<script src="js/formulario.js"></script>
+
+
+</body>
+</html>

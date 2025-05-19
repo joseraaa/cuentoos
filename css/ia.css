@@ -1,0 +1,88 @@
+.btn-volver {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: white;
+    font-weight: bold;
+    font-family: 'Comic Neue', cursive;
+    padding: 0.7rem 1.5rem;
+    border: 2px solid var(--color-accent);
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin: 1rem auto;
+    text-align: center;
+  }
+  
+  .btn-volver:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-dark);
+  }
+  :root {
+    --color-primary: #ff9a8b;
+    --color-secondary: #ffd3b5;
+    --color-accent: #6b5b95;
+    --color-light: #fff8f0;
+    --color-dark: #333;
+  }
+  
+  body {
+    font-family: 'Comic Neue', cursive;
+    background-color: var(--color-light);
+    padding: 2rem;
+    text-align: center;
+    color: var(--color-dark);
+  }
+  
+  h1 {
+    color: var(--color-primary);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  form {
+    background: var(--color-secondary);
+    padding: 1.5rem;
+    border-radius: 20px;
+    max-width: 500px;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  input, select, textarea {
+    width: 100%;
+    margin: 0.5rem 0;
+    padding: 0.6rem;
+    border: 2px solid var(--color-accent);
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 1rem;
+    background-color: #ffffff;
+    color: var(--color-dark);
+  }
+  
+  button {
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.2rem;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+    font-weight: bold;
+  }
+  
+  button:hover {
+    background-color: #e86c5a;
+  }
+  
+  .generar-cuento {
+    max-width: 700px;
+    margin: 2rem auto;
+  }
+  
+  .botones-opciones button {
+    margin: 0.5rem;
+  }
+  
+    
