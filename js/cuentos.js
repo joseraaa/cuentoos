@@ -86,7 +86,7 @@ const todosCuentos = [
   },
   {
     id: 11,
-    titulo: 'El conejito soñador',
+    titulo: 'El conejito soñador ',
     descripcion: 'Un conejo conociendo la importancia de los amigos',
     img: 'assets/img/conejos.jpeg',
     link: 'conejos.html',
