@@ -24,7 +24,12 @@ function iniciarCronometro(minutos) {
 
       if (tiempoRestante <= 0) {
         clearInterval(intervalo);
-        alert("¡Se acabó el tiempo de lectura!");
+        Swal.fire({
+          title: "¡Tiempo finalizado!",
+          text: "Se acabó el tiempo de lectura.",
+          icon: "info",
+          confirmButtonText: "Aceptar"
+        });
       }
     }, 1000);
   }
@@ -40,17 +45,23 @@ document.addEventListener('DOMContentLoaded', () => {
       const tiempo = parseInt(document.getElementById('tiempo-max').value);
       const edad = document.getElementById('edad-nino').value;
 
-      alert(`Configuración guardada: ${tiempo} min, edad ${edad}`);
-      iniciarCronometro(tiempo);
+      Swal.fire({
+        title: 'Configuración guardada',
+        html: `Tiempo: <strong>${tiempo} min</strong><br>Edad: <strong>${edad}</strong>`,
+        icon: 'success',
+        confirmButtonText: 'Continuar'
+      }).then(() => {
+        iniciarCronometro(tiempo);
 
-      // Guardar tiempo y marca de inicio en localStorage
-      localStorage.setItem("tiempoLectura", tiempo);
-      localStorage.setItem("inicioLectura", Date.now());
+        // Guardar tiempo y marca de inicio en localStorage
+        localStorage.setItem("tiempoLectura", tiempo);
+        localStorage.setItem("inicioLectura", Date.now());
 
-      // Redirigir a index.html después de 1s
-      setTimeout(() => {
-        window.location.href = "index.html";
-      }, 1000);
+        // Redirigir a index.html después de 1s
+        setTimeout(() => {
+          window.location.href = "index.html";
+        }, 1000);
+      });
     });
   }
 
@@ -89,7 +100,14 @@ document.addEventListener('DOMContentLoaded', () => {
           clearInterval(intervalo);
           localStorage.removeItem("tiempoLectura");
           localStorage.removeItem("inicioLectura");
-          window.location.href = "padres.html";
+          Swal.fire({
+            title: "¡Tiempo finalizado!",
+            text: "Se acabó el tiempo de lectura.",
+            icon: "info",
+            confirmButtonText: "Volver"
+          }).then(() => {
+            window.location.href = "padres.html";
+          });
         }
       };
 
