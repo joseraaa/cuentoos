@@ -188,10 +188,16 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Select de categoría
-  selectCategoria.addEventListener('change', () => {
-    categoria = selectCategoria.value;
-    renderCuentos(tipo, categoria, palabraClave);
-  });
+ selectCategoria.addEventListener('change', () => {
+  categoria = selectCategoria.value;
+
+  // Limpiar búsqueda al seleccionar categoría
+  palabraClave = '';
+  inputBusqueda.value = '';
+
+  renderCuentos(tipo, categoria, palabraClave);
+});
+
 
   // Input de búsqueda
   inputBusqueda.addEventListener('input', () => {
