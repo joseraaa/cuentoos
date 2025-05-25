@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('form-cuento');
   const resultado = document.querySelector('.generar-cuento');
@@ -15,7 +14,12 @@ document.addEventListener('DOMContentLoaded', () => {
     resultado.innerHTML = '🌀 Generando tu cuento mágico...';
 
     try {
-      const response = await fetch('http://localhost:3000/api/crear-cuento', {
+      // Detectar entorno local o en producción
+      const baseURL = window.location.hostname === 'localhost'
+        ? 'http://localhost:3000'
+        : 'https://TUSERVIDORDEPLOY.com'; // <-- reemplaza con tu URL real
+
+      const response = await fetch(`${baseURL}/api/crear-cuento`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
