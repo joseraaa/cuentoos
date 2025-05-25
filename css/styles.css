@@ -1,4 +1,4 @@
-﻿/* Variables de colores */
+/* Variables de colores */
 :root {
     --color-primary: #ff9a8b;
     --color-secondary: #ffd3b5;
@@ -45,49 +45,127 @@
     font-weight: bold;
   }
   
-  /* Hero */
-  .hero {
-    position: relative;
-    height: 60vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image:
-      linear-gradient(to bottom, rgba(255,154,139,0.8), rgba(255,211,181,0.8)),
-      url('../assets/hero-fun.jpg');
-    background-size: cover;
-    background-position: center;
-    text-align: center;
-  }
-  
-  .hero h1 {
-    font-family: 'Freckle Face', cursive;
-    font-size: 3rem;
-    color: white;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
-    animation: bounce 2s ease-in-out infinite;
-  }
-  
-  .shape {
-    position: absolute;
-    border-radius: 50%;
-    opacity: 0.3;
-    animation: float 6s ease-in-out infinite;
-  }
-  .shape-1 {
-    width: 120px;
-    height: 120px;
-    background: var(--color-secondary);
-    top: 10%;
-    left: 15%;
-  }
-  .shape-2 {
-    width: 90px;
-    height: 90px;
-    background: var(--color-primary);
-    bottom: 15%;
-    right: 20%;
-  }
+/* Estilo base de la sección hero (puedes conservar el tuyo) */
+.hero {
+  position: relative;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, rgba(255, 154, 139, 0.85), rgba(255, 211, 181, 0.85));
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Animación para el título */
+.hero h1 {
+  font-family: 'Freckle Face', cursive;
+  font-size: 3rem;
+  color: white;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  animation: bounce 2s ease-in-out infinite;
+  z-index: 2;
+}
+
+/* Cuadrados tipo textura */
+.square {
+  position: absolute;
+  opacity: 0.8;
+  transform: rotate(15deg);
+  animation: float 12s ease-in-out infinite alternate;
+  z-index: 1;
+}
+
+.square.sm { width: 15px; height: 15px; }
+.square.md { width: 25px; height: 25px; }
+.square.lg { width: 40px; height: 40px; }
+
+.square.red { background-color: #e63946; }
+.square.orange { background-color: #f4a261; }
+.square.yellow { background-color: #f9c74f; }
+.square.pink { background-color: #ff6bcb; }
+.square.purple { background-color: #9d4edd; }
+.square.peach { background-color: #ffb4a2; }
+
+/* Posiciones manuales dispersas */
+.square-1 { top: 10%; left: 5%; }
+.square-2 { top: 20%; left: 25%; }
+.square-3 { top: 30%; left: 15%; }
+.square-4 { top: 40%; left: 50%; }
+.square-5 { top: 60%; left: 10%; }
+.square-6 { top: 70%; left: 70%; }
+.square-7 { top: 15%; left: 80%; }
+.square-8 { top: 45%; left: 85%; }
+.square-9 { top: 80%; left: 40%; }
+.square-10 { top: 25%; left: 60%; }
+/* Círculos tipo textura */
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.7;
+  animation: float 10s ease-in-out infinite alternate;
+  z-index: 1;
+}
+
+.circle.sm { width: 18px; height: 18px; }
+.circle.md { width: 30px; height: 30px; }
+.circle.lg { width: 45px; height: 45px; }
+
+/* Colores compatibles con los cuadrados */
+.circle.green { background-color: #90be6d; }
+.circle.blue { background-color: #577590; }
+.circle.pink { background-color: #f72585; }
+.circle.yellow { background-color: #f9c74f; }
+.circle.peach { background-color: #ffb4a2; }
+
+/* Posiciones personalizadas */
+.circle-1 { top: 5%; left: 70%; }
+.circle-2 { top: 35%; left: 30%; }
+.circle-3 { top: 50%; left: 80%; }
+.circle-4 { top: 75%; left: 20%; }
+.circle-5 { top: 60%; left: 55%; }
+/* Óvalos decorativos */
+.oval {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.65;
+  animation: float 14s ease-in-out infinite alternate;
+  z-index: 1;
+  transform: rotate(20deg);
+}
+
+/* Tamaños: ancho mayor que alto para efecto de óvalo */
+.oval.sm { width: 30px; height: 18px; }
+.oval.md { width: 50px; height: 30px; }
+.oval.lg { width: 70px; height: 40px; }
+
+/* Colores reutilizados */
+.oval.blue { background-color: #577590; }
+.oval.green { background-color: #90be6d; }
+.oval.purple { background-color: #9d4edd; }
+.oval.red { background-color: #e63946; }
+.oval.orange { background-color: #f4a261; }
+
+/* Posiciones personalizadas */
+.oval-1 { top: 12%; left: 35%; }
+.oval-2 { top: 45%; left: 10%; }
+.oval-3 { top: 25%; left: 75%; }
+.oval-4 { top: 70%; left: 30%; }
+.oval-5 { top: 55%; left: 65%; }
+
+
+/* Animaciones */
+@keyframes float {
+  0% { transform: translateY(0) rotate(15deg); }
+  100% { transform: translateY(-10px) rotate(25deg); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+
   
   /* Grid */
   .stories-grid {
@@ -226,21 +304,7 @@
     color: white;
   }
   
-  /* Animaciones */
-  @keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
-  }
-  
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(20px); }
-  }
-  
-  @keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-  }
+
   
   /* Responsive */
   @media (max-width: 600px) {
