@@ -15,9 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     try {
       // Detectar entorno local o en producción
-      const baseURL = window.location.hostname === 'localhost'
-        ? 'http://localhost:3000'
-        : 'https://TUSERVIDORDEPLOY.com'; // <-- reemplaza con tu URL real
+     const baseURL = window.location.hostname === 'localhost'
+  ? 'http://localhost:3000'
+  : 'https://generador-cuentos.onrender.com';
+ // <-- reemplaza con tu URL real
 
       const response = await fetch(`${baseURL}/api/crear-cuento`, {
         method: 'POST',
