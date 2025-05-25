@@ -84,5 +84,60 @@
   .botones-opciones button {
     margin: 0.5rem;
   }
-  
+  /* Fondo cálido y bordes redondeados para el área del cuento */
+.generar-cuento {
+  background-color: #fff9f0;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: "Comic Sans MS", "Poppins", cursive, sans-serif;
+  color: #4a3f35;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 2rem auto;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+/* Estilo para el título del cuento */
+.generar-cuento h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #e27602;
+  margin-bottom: 1.5rem;
+}
+
+/* Estilo general para los párrafos */
+.generar-cuento p {
+  text-indent: 1.5em;
+  margin-bottom: 1rem;
+}
+
+/* Primera letra destacada en cada párrafo */
+.generar-cuento p::first-letter {
+  font-size: 1.5rem;
+  color: #f35b04;
+  font-weight: bold;
+}
+
+/* Estilo opcional para subtítulos generados */
+.generar-cuento h3 {
+  font-size: 1.4rem;
+  color: #3a7f0d;
+  margin-top: 1.5rem;
+  border-left: 5px solid #a7d129;
+  padding-left: 0.5rem;
+}
+
+/* Modo oscuro alternativo (puede activarse con JS) */
+.generar-cuento.modo-oscuro {
+  background-color: #1f1f1f;
+  color: #f0f0f0;
+}
+
+/* Ajuste de texto dentro de la caja */
+.generar-cuento * {
+  white-space: pre-wrap;
+}
+
     
