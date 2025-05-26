@@ -10,34 +10,54 @@
 </head>
 <body>
 
-  <h1>📖 ¡Crea tu cuento mágico!</h1>
+  <!-- Pantalla de carga -->
+  <div id="pantalla-carga">
+    <img src="assets/img/hola.png" alt="Cargando..." />
+    <p>Cargando tu mundo mágico...</p>
+  </div>
 
-  <form id="form-cuento">
-    <input type="text" id="nombre" placeholder="Tu nombre" required />
-    <input type="text" id="personaje" placeholder="Nombre de un personaje (ej. un dragón, tu mascota, etc.)" required />
-    <input type="text" id="lugar" placeholder="Un lugar mágico o divertido" required />
-    
-    <select id="tipo-aventura" required>
-      <option value="">Elige el tipo de aventura</option>
-      <option value="fantasia">🧚 Fantasía</option>
-      <option value="espacial">🚀 Espacial</option>
-      <option value="animales">🐾 Con animales</option>
-      <option value="comico">😂 Cómico</option>
-      <option value="misterio">🕵️ Misterio</option>
-    </select>
+  <!-- Contenido principal oculto al inicio -->
+  <div id="contenido" style="display: none;">
+    <h1>📖 ¡Crea tu cuento mágico!</h1>
 
-    <textarea id="mensaje" placeholder="¿Quieres dejar un mensaje mágico? (opcional)" rows="3"></textarea>
-    
-    <button type="submit">✨ ¡Generar cuento!</button>
-  </form>
+    <form id="form-cuento">
+      <input type="text" id="nombre" placeholder="Tu nombre" required />
+      <input type="text" id="personaje" placeholder="Nombre de un personaje (ej. un dragón, tu mascota, etc.)" required />
+      <input type="text" id="lugar" placeholder="Un lugar mágico o divertido" required />
+      
+      <select id="tipo-aventura" required>
+        <option value="">Elige el tipo de aventura</option>
+        <option value="fantasia">🧚 Fantasía</option>
+        <option value="espacial">🚀 Espacial</option>
+        <option value="animales">🐾 Con animales</option>
+        <option value="comico">😂 Cómico</option>
+        <option value="misterio">🕵️ Misterio</option>
+      </select>
 
-  <div class="generar-cuento" id="resultadoCuento" style="white-space: pre-wrap; margin-top: 20px;"></div>
+      <textarea id="mensaje" placeholder="¿Quieres dejar un mensaje mágico? (opcional)" rows="3"></textarea>
+      
+      <button type="submit">✨ ¡Generar cuento!</button>
+    </form>
 
-  <a href="index.html" class="btn-volver">⬅️ Volver al inicio</a>  
-  <div class="botones-opciones" style="display: none;"></div>
+    <div class="generar-cuento" id="resultadoCuento" style="white-space: pre-wrap; margin-top: 20px;"></div>
 
-<script src="js/formulario.js"></script>
+    <a href="index.html" class="btn-volver">⬅️ Volver al inicio</a>  
+    <div class="botones-opciones" style="display: none;"></div>
+  </div>
 
+  <!-- JS para manejar carga -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      setTimeout(() => {
+        const loader = document.getElementById("pantalla-carga");
+        const contenido = document.getElementById("contenido");
 
+        if (loader) loader.style.display = "none";
+        if (contenido) contenido.style.display = "block";
+      }, 5000); // espera 5 segundos
+    });
+  </script>
+
+  <script src="js/formulario.js"></script>
 </body>
 </html>
