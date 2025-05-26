@@ -381,6 +381,44 @@
   letter-spacing: 1px;
 }
 
+/* Triángulos decorativos */
+.triangle {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0.75;
+  animation: float 12s ease-in-out infinite alternate;
+  z-index: 1;
+}
+
+/* Tamaños con bordes para formar triángulos hacia arriba */
+.triangle.sm {
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 17px solid;
+}
+.triangle.md {
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 25px solid;
+}
+.triangle.lg {
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 35px solid;
+}
+
+/* Colores (reutilizando paleta) */
+.triangle.yellow { border-bottom-color: #f9c74f; }
+.triangle.pink { border-bottom-color: #f72585; }
+.triangle.blue { border-bottom-color: #577590; }
+.triangle.green { border-bottom-color: #90be6d; }
+
+/* Posiciones para llenar el lado derecho */
+.triangle-1 { top: 20%; right: 10%; }
+.triangle-2 { top: 45%; right: 18%; }
+.triangle-3 { top: 65%; right: 5%; }
+.triangle-4 { top: 80%; right: 15%; }
 
 
 
