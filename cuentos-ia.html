@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/ia.css">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
 </head>
 <body>
 
@@ -38,8 +39,24 @@
       
       <button type="submit">✨ ¡Generar cuento!</button>
     </form>
+    <div id="modal-lector" style="display: none;">
+  <div class="modal-contenido">
+    <button id="cerrar-modal">❌ Cerrar</button>
+    
+    <div class="controls">
+      <button class="btn-narrar" onclick="narrarCuento()">🔊 Escuchar</button>
+      <button class="btn-narrar" onclick="pausarCuento()">⏸️ Pausar</button>
+      <button class="btn-narrar" onclick="reanudarCuento()">▶️ Reanudar</button>
+      <button class="btn-narrar" onclick="detenerCuento()">⏹️ Detener</button>
+    </div>
+
+    <div id="texto-cuento"></div>
+  </div>
+</div>
+
 
     <div class="generar-cuento" id="resultadoCuento" style="white-space: pre-wrap; margin-top: 20px;"></div>
+    <button id="leer-cuento" style="margin-top: 10px;">📖 Leer el cuento</button>
 
     <a href="index.html" class="btn-volver">⬅️ Volver al inicio</a>  
     <div class="botones-opciones" style="display: none;"></div>
@@ -54,10 +71,11 @@
 
         if (loader) loader.style.display = "none";
         if (contenido) contenido.style.display = "block";
-      }, 9000); // espera 5 segundos
+      }, 5000); // espera 5 segundos
     });
+    
   </script>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script src="js/formulario.js"></script>
 </body>
 </html>
